@@ -1,55 +1,116 @@
-.hero {
-    background: url('../img/nataliya.jpeg') center/cover no-repeat;
-    height: 100vh;
-    background-color: #f3ece2;
+/* ==============================================
+   Root Variables
+   ============================================== */
+   :root {
+    --black:        #000000;
+    --white:        #ffffff;
+    --gray-dark:    #111111;
+    --gray-light:   #555555;
+    --ivory:       #faf9f6;
+    --mist:        #e7e7d8;
+    --navy:        #152f4a;
+    --gold:        #c49b56;
+    --charcoal:    #1a1a1a;
+    --transition:   0.3s;
+    --header-height: 70px;
   }
-  
-  .card-title {
-    font-weight: bold;
+
+  html{
+    background-color: #000000;
+    scroll-behavior: smooth;
+    scroll-padding-top: var(--header-h);
+    overflow-x: hidden;
+  }
+
+  .menu{
+    font-family: 'Futura',Trebuchet MS,Arial,sans-serif;
+  }
+
+  .plan-card {
+    background: var(--black) !important;
+    color: var(--white) !important;
+    border: 1px solid rgba(255,255,255) !important;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .price-badge {
+    background: var(--gold);
+    color: var(--ivory);
+    font-family: 'Playfair Display', serif;
     font-size: 1.25rem;
-  }
-  
-  .card-text {
-    font-size: 1rem;
-  }
-
-  .card-body ul{
-    text-align: left;
-  }
-  
-  section h2 {
-    font-weight: bold;
-  }
-  
-  .bg-dim {
-    position: relative;
-  }
-
-  .bg-dim::before {
-    content: "";
+    padding: 0.5rem 1rem;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
+    top: 1rem; right: 1rem;
+    border-radius: 0.25rem;
+  }
+  .plan-card .card-body {
+    padding: 2rem;
+  }
+  .plan-card ul li {
+    margin-bottom: 0.5rem;
   }
 
-  .overlay-content {
-    position: relative;
-    z-index: 2;
-  }
-
-  .fade-in {
+  .btn-primary-custom {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    border: 2px solid var(--gold) !important;
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
     opacity: 0;
-    transform: translateY(-20px);
-    animation: fadeInDown 1.2s ease-out forwards;
+    animation: fadeInUp 1.6s forwards;
   }
-  
-  @keyframes fadeInDown {
-    to {
-      opacity: 1;
-      transform: translateY(0);
+  .btn-primary-custom:hover {
+    background: var(--gold);
+    color: var(--ivory);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary-custom {
+    margin-top: auto;
+    border: 2px solid var(--white) !important;
+    background: black;
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  .btn-secondary-custom:hover {
+    background: var(--navy);
+    color: var(--ivory);
+  }
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+  @media (max-width: 550px) {
+    .menu {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem;
+    }
+    .phrase {
+      font-size: 1.5rem !important;
+      margin: 20 auto;
+      padding: auto;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .steps p {
+      font-size: x-small !important;
     }
   }
