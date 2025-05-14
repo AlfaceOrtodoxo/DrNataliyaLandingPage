@@ -96,6 +96,16 @@
     transform: translateY(0);
 }
 
+
+  @media (max-width: 768px) {
+  #header,
+  #qualifications,
+  #steps {
+    background-attachment: scroll;
+    background-position: center top;
+    }
+  }
+
   @media (max-width: 550px) {
     .menu {
         flex-direction: column !important;
@@ -106,6 +116,13 @@
       font-size: 1.5rem !important;
       margin: 20 auto;
       padding: auto;
+    }
+
+     .plan-card .price-badge {
+    position: static !important;   /* sai do absolute */
+    margin: 1.5rem 0 0.3rem 0;            /* espaço abaixo */
+    align-self: center;            /* centraliza horizontalmente */
+    display: inline-block;         /* ajusta largura ao conteúdo */
     }
   }
 
